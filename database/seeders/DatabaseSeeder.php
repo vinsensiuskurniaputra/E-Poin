@@ -30,6 +30,12 @@ class DatabaseSeeder extends Seeder
         
         User::factory(15)->create();
 
+        User::create([
+            'role_id' => '1',
+            'username' => 'AdminKu',
+            'password' => Hash::make('12345'),
+        ]);
+
         DaftarPelanggaran::factory(10)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
