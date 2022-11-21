@@ -10,6 +10,7 @@ use App\Models\Kategori;
 use App\Models\TheClass;
 use Illuminate\Database\Seeder;
 use App\Models\DaftarPelanggaran;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -33,7 +34,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'role_id' => '1',
             'username' => 'AdminKu',
-            'password' => Hash::make('12345'),
+            'password' => Hash::make('AdminKu'),
         ]);
 
         // DaftarPelanggaran::factory(10)->create();
