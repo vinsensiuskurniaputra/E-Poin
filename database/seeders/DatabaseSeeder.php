@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         
-        Kategori::factory(10)->create();
+        // Kategori::factory(10)->create();
 
-        TheClass::factory(5)->create();
+        // TheClass::factory(5)->create();
 
-        Student::factory(10)->create();
+        // Student::factory(10)->create();
         
-        User::factory(15)->create();
+        // User::factory(15)->create();
 
         User::create([
             'role_id' => '1',
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345'),
         ]);
 
-        DaftarPelanggaran::factory(10)->create();
+        // DaftarPelanggaran::factory(10)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
