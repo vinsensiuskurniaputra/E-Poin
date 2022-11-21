@@ -27,7 +27,13 @@
                 </div>
                 <div class="w-full text-white">
                     <div class="bg-[#1C0C5B] p-5 rounded-t-lg">
-                        <h1 class="font-bold text-2xl">{{ $role->where('id', '0')->first()->user->count() }}</h1>
+                        <h1 class="font-bold text-2xl">
+                            @if ($role->where('id', '0')->first() != null)
+                                {{ $role->where('id', '0')->first()->user->count() }}
+                            @else
+                                0
+                            @endif
+                        </h1>
                         <h1>Jumlah User</h1>
                     </div>
                     <a href="/admin/daftar-user"
