@@ -20,7 +20,15 @@ class MyController extends Controller
                 return $kategori->daftar_pelanggaran->count();
             }),
             'students' => Student::all()->sortByDesc(function($student){
-                return $student->daftar_pelanggaran->count();
+                $name = [];
+                foreach($student as $siswa){
+                    $poin = 0;
+                    foreach($student->daftar_pelanggaran as $pelanggar){
+                        $poin += $pelanggar->kategori->poin;
+                    }
+                    $name [] = $poin;
+                }
+                return $name;
             }),
         ]);
     }
@@ -137,7 +145,15 @@ class MyController extends Controller
                 return $kategori->daftar_pelanggaran->count();
             })->take(3),
             'students' => Student::all()->sortByDesc(function($student){
-                return $student->daftar_pelanggaran->count();
+                $name = [];
+                foreach($student as $siswa){
+                    $poin = 0;
+                    foreach($student->daftar_pelanggaran as $pelanggar){
+                        $poin += $pelanggar->kategori->poin;
+                    }
+                    $name [] = $poin;
+                }
+                return $name;
             }),
             'role' => Role::all(),
         ]);

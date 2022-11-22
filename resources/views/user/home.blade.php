@@ -53,8 +53,12 @@
                                 @foreach ($students->take(3) as $student)
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="py-4 px-6">{{ $loop->index + 1 }}</td>
-                                        <td class="py-4 px-6">{{ $student->name }}</td>
-                                        <td class="py-4 px-6">{{ $student->daftar_pelanggaran->count() }}</td>
+                                        <td class="py-4 px-6">{{ $student->name }}</td><?php
+                                        $poin = 0;
+                                        foreach ($student->daftar_pelanggaran as $pelanggar) {
+                                            $poin += $pelanggar->kategori->poin;
+                                        } ?>
+                                        <td class="py-4 px-6">{{ $poin }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -123,11 +127,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($students->take(3) as $student)
+                                @foreach ($students as $student)
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="py-4 px-6">{{ $loop->index + 1 }}</td>
-                                        <td class="py-4 px-6">{{ $student->name }}</td>
-                                        <td class="py-4 px-6">{{ $student->daftar_pelanggaran->count() }}</td>
+                                        <td class="py-4 px-6">{{ $student->name }}</td><?php
+                                        $poin = 0;
+                                        foreach ($student->daftar_pelanggaran as $pelanggar) {
+                                            $poin += $pelanggar->kategori->poin;
+                                        } ?>
+                                        <td class="py-4 px-6">{{ $poin }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
