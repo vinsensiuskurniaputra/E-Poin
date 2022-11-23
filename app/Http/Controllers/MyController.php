@@ -87,7 +87,7 @@ class MyController extends Controller
     {    
         return view('admin.pelanggaran-siswa', [
             'title' => 'Pelanggaran Siswa',
-            'pelanggarans' => DaftarPelanggaran::all(),
+            'pelanggarans' => DaftarPelanggaran::all()->sortDesc(),
             'students' => Student::all(),
             'kategoris' => Kategori::all(),
         ]);
