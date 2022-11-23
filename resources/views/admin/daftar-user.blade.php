@@ -125,7 +125,7 @@
                                     <td class="py-4 px-6"> {{ $loop->iteration }} </td>
                                     <td class="py-4 px-6">
                                         @if ($user->image)
-                                            <img src="{{ asset('storage/' . $user->image) }}"
+                                            <img src="{{ asset('/storage/' . $user->image) }}"
                                                 class="rounded-full h-10 w-10" alt="" />
                                         @else
                                             <img src="https://source.unsplash.com/500x500/?profile"

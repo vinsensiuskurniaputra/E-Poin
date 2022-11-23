@@ -74,12 +74,12 @@ class MyController extends Controller
         $kategori = Kategori::all();
 
         if (request('search')){
-            $kategori = $kategori->where('name', 'LIKE', '%'.request('search').'%');
+            $kategori = $kategori->where('name', 'LIKE', request('search'));
         }
 
         return view('admin.kategori-pelanggaran', [
             'title' => 'Kategori Pelanggaran',
-            'kategoris' => $kategori->sortByDesc('poin')
+            'kategoris' => $kategori->sortByDesc('poin'),
         ]);
     }
 
