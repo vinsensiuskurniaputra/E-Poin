@@ -25,7 +25,7 @@ Route::get('/', [MyController::class, 'guest']);
 Route::get('/user/about', [MyController::class, 'guest_about']);
 
 // admin router
-Route::get('/login',[MyController::class, 'login']);
+Route::get('/login',[MyController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
