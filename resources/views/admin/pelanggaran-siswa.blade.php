@@ -179,12 +179,14 @@
                                         <option value="{{ $student->id }}">{{ $student->nis }}</option>
                                     @endforeach
                                 </select>
+                                <h1>Name : <span id="name">Vinsensius Kurnia Putra</span></h1>
                             </div>
                             <div class="mt-3 mb-3 w-full">
                                 <label for="select-state">Kategori Pelanggaran</label>
                                 <select id="select-state" name="kategori_id" class="mt-3"
                                     placeholder="Pick a state...">
                                     <option value="">Select a state...</option>
+
                                     @foreach ($kategoris as $kategori)
                                         <option value="{{ $kategori->id }}">{{ $kategori->name }}</option>
                                     @endforeach
@@ -228,8 +230,11 @@
                                     <label for="select-state">NIS Siswa</label>
                                     <select id="select-state" name="student_id" class="mt-3"
                                         placeholder="Pick a state...">
-                                        <option value="{{ $pelanggaran->student->id }}">{{ $pelanggaran->student->nis }}
-                                        </option>
+                                        @if ($pelanggaran->student != null)
+                                            <option value="{{ $pelanggaran->student->id }}">
+                                                {{ $pelanggaran->student->nis }}
+                                            </option>
+                                        @endif
                                         @foreach ($students as $student)
                                             <option value="{{ $student->id }}">{{ $student->nis }}</option>
                                         @endforeach
@@ -239,9 +244,11 @@
                                     <label for="select-state">Kategori Pelanggaran</label>
                                     <select id="select-state" name="kategori_id" class="mt-3"
                                         placeholder="Pick a state...">
-                                        <option value="{{ $pelanggaran->kategori->id }}">
-                                            {{ $pelanggaran->kategori->name }}
-                                        </option>
+                                        @if ($pelanggaran->kategori != null)
+                                            <option value="{{ $pelanggaran->kategori->id }}">
+                                                {{ $pelanggaran->kategori->name }}
+                                            </option>
+                                        @endif
                                         @foreach ($kategoris as $kategori)
                                             <option value="{{ $kategori->id }}">{{ $kategori->name }}</option>
                                         @endforeach

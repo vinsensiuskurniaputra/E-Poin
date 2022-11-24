@@ -5713,4 +5713,7 @@ $(document).ready(function () {
     $("select").selectize({
         sortField: "text",
     });
+    $("#select-state").change(function () {
+        $("#name").html($("#select-state").val());
+    });
 });
