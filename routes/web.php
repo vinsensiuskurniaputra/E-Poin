@@ -29,6 +29,8 @@ Route::get('/login',[MyController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/nama',[MyController::class, 'nama']);
+
 Route::get('/admin/home', [MyController::class, 'home'])->middleware('auth');
 
 Route::get('/admin/kategori-pelanggaran', [MyController::class, 'ketegori_pelanggaran'])->middleware('auth');

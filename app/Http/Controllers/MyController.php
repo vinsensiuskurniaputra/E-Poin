@@ -39,6 +39,13 @@ class MyController extends Controller
             'title' => 'About',
         ]);
     }
+
+    public function nama()
+    {    
+        return view('components.nama',[
+            'student' => Student::where('id', request('id'))->first(),
+        ]);
+    }
     //Admin
     public function login()
     {    

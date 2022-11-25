@@ -5714,6 +5714,9 @@ $(document).ready(function () {
         sortField: "text",
     });
     $("#select-state").change(function () {
-        $("#name").html($("#select-state").val());
+        $("#student_name_pelanggaran");
+        $("#student_name_pelanggaran").load(
+            "/nama?id=" + $("#select-state").val()
+        );
     });
 });

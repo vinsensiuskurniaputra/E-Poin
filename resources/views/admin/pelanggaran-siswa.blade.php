@@ -179,6 +179,7 @@
                                         <option value="{{ $student->id }}">{{ $student->nis }}</option>
                                     @endforeach
                                 </select>
+                                <h1 class="text-xs text-red-500"><span id="student_name_pelanggaran"></span></h1>
                             </div>
                             <div class="mt-3 mb-3 w-full">
                                 <label for="select-state">Kategori Pelanggaran</label>
